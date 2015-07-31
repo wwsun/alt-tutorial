@@ -1,7 +1,11 @@
 var alt = require('../alt');
 
 class LocationActions {
+
   updateLocations(locations) {
+
+    // you can use `this.dispatch` to dispatch your payload through
+    // the Dispatcher and onto the store
     this.dispatch(locations);
   }
 

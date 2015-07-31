@@ -1,9 +1,13 @@
 var alt = require('../alt');
 var LocationActions = require('../actions/LocationActions');
-var LocationSource = require('../sources/LocationSource');
+var LocationSource = require('../sources/LocationSource'); // mock data
 var FavoritesStore = require('./FavoritesStore');
 
+// a store is your data warehouse, which used to persist your app state
+
 class LocationStore {
+
+  // instance variables defined anywhere in the store will become the state
   constructor() {
     this.locations = [];
     this.errorMessage = null;
@@ -22,6 +26,8 @@ class LocationStore {
     this.exportAsync(LocationSource);
   }
 
+  // methods in the store's prototype that will deal with the actions
+  // action handlers
   handleUpdateLocations(locations) {
     this.locations = locations;
     this.errorMessage = null;
